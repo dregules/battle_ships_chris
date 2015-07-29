@@ -32,29 +32,12 @@ attr_accessor :matrix
   end
 
   def matrix_builder size
-    @matrix = (0...size).map{ Array.new(size, Cell.new) }
-    # matrix_size = board.board_size
-# arrayer = size.times{Cell.new}
-#
-# @matrix = (0...size).map{Array.new (arrayer)}
-#
+    @matrix = (0...size).map{ Array.new(size) }
+    populate_matrix
+  end
 
-#
-# row_1 = [Class.new, Class.new, Class.new]
-# row_2 = [Class.new, Class.new, Class.new]
-# row_3 = [Class.new, Class.new, Class.new]
-#
-# @matrix = [row_1,row_2,row_3]
-
-
-
-# arr = (0...size).to_a
-# arr.each do |x|
-# Array.new.name "row_#{x}"
-
-
-
-
+  def populate_matrix
+    @matrix = @matrix.map! {|inner_array| inner_array.map! {|x| x = Cell.new}}
   end
 
 end
