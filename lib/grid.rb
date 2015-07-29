@@ -6,4 +6,11 @@ class Grid
     fail 'Cell already bombed!' if cell.bombed?
     cell.bombed = true
   end
+
+  def convert_coordinates(coordinates)
+
+  end
+
+
+
 end
