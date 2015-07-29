@@ -12,8 +12,12 @@ describe Grid do
     expect { subject.bomb bombed_cell }.to raise_error 'Cell already bombed!'
   end
 
-  it "responds to #convert_coordinates" do
-    expect(subject).to respond_to(:convert_coordinates).with(1).argument
+  it "responds to #split_coordinates" do
+    expect(subject).to respond_to(:split_coordinates).with(1).argument
+  end
+
+  it "splits coordinates" do
+    expect(subject.split_coordinates("A1")).to eq ["A", "1"]
   end
 
 
